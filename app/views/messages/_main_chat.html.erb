@@ -31,14 +31,14 @@
   </div>
 </div>
 
-<div class="main-footer">
-<div class="form">
-  <input type="text" placeholder="type a message" class="text">
-  <label class="image">
-    <span class="img">画像</span>
-    <input type="file" class="img-file">
-  </label>
-</div>
-  <input type="submit" value="送信" class="send">
+<%= form_with model: [@room, @message], class: "main-footer", local: true do |f| %>
+  <div class="form">
+    <%= f.text_field :content, class: "text", placeholder: "type a message" %>
+    <label class="image">
+      <span class="img">画像</span>
+      <%= f.text_field :image, class: "img-file" %>
+    </label>
+  </div>
+  <%= f.submit "送信",class: "send" %>
+<% end %>
 
-<div>
