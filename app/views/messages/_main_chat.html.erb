@@ -1,7 +1,7 @@
 
 <div class="main-header">
   <div class="main-room">
-    <div class="chat-name">RoomName</div>
+    <div class="chat-name"><%= @room.name %></div>
   </div>
 
   <div class="chat-end">
@@ -10,25 +10,7 @@
 </div>
 
 <div class="main-chat">
-  <div class="messages">
-    <div class="user-date">
-      <div class="name">テスト１</div>
-      <div class="day">2022/3/14(Mon)1:40:00</div>
-    </div>
-    <div class="message-date">
-      <div class="message">テスト１</div>
-    </div>
-  </div>
-
-  <div class="messages">
-    <div class="user-date">
-      <div class="name">テスト２</div>
-      <div class="day">2022/3/14(Mon)1:43:00</div>
-    </div>
-    <div class="message-date">
-      <div class="message">テスト２</div>
-    </div>
-  </div>
+  <%= render partial: 'message', collection: @messages %>
 </div>
 
 <%= form_with model: [@room, @message], class: "main-footer", local: true do |f| %>
